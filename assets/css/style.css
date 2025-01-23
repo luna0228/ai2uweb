@@ -75,18 +75,27 @@ li {
 
 .btn.focus,
 .btn:focus,
-button:focus {
+button:focus,
+.accordion-button:focus {
   outline: none;
   box-shadow: none;
 }
 
 /**/
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
 .mb-0 {
   margin-bottom: 0;
 }
 
-.mt-20 {
-  margin-top: 20px;
+.mb-10 {
+  margin-bottom: 10px;
 }
 
 .mb-20 {
@@ -104,6 +113,7 @@ button:focus {
 .padding-style {
   padding: 30px 0;
 }
+
 
 .bg-white {
   background-color: #fff;
@@ -462,15 +472,28 @@ main {
   transform: translate(-50%, -50%);
 }
 
-.progress-bar {
+.progress {
+  height: 12px;
+  border-radius: 8px;
+}
+
+.progress .progress-bar {
+  background-image: linear-gradient(to right, #7cb7f9, #4681f0);
+  border-radius: 8px;
+}
+
+.progress-bar.circle {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: radial-gradient(closest-side, white 79%, transparent 80% 100%), conic-gradient(#4681f0 75%, rgba(70, 129, 240, .4) 0);
+  background: radial-gradient(closest-side, #f1f6fd 79%, transparent 80% 100%), conic-gradient(#4681f0 75%, rgba(70, 129, 240, .4) 0);
 }
+
+
+
 
 /*from*/
 input[type='password'] {
@@ -707,6 +730,101 @@ form .input-box {
   border: none;
 }
 
+.class-unit-sidebar .card-body .accordion-button {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding: 16px 40px 16px 16px;
+  color: #121212 !important;
+  box-shadow: none;
+}
+
+.class-unit-sidebar .card-body .accordion-button .icon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.25rem;
+  transition: all ease-in-out .3s;
+}
+
+.class-unit-sidebar .card-body .accordion-button[aria-expanded="true"] .icon {
+  transform: rotate(-180deg);
+
+}
+
+.class-unit-sidebar .card-body .accordion-button::after {
+  content: "";
+  display: none;
+}
+
+.class-unit-sidebar .card-body .accordion-body {
+  background: #f1f6fd;
+  padding: 0;
+}
+
+.class-unit-list li a {
+  display: flex;
+  padding-top: 14px;
+  padding-right: 16px;
+  color: #121212;
+}
+
+.class-unit-list li a .imgBox {
+  padding: 0 12px;
+  position: relative;
+}
+
+.class-unit-list li a .imgBox .icon {
+  position: absolute;
+  top: 0px;
+  left: 12px;
+  line-height: 1;
+  font-size: .8rem;
+  width: 20px;
+  height: 20px;
+  color: #4681f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.class-unit-list li.finish a .imgBox .icon::after {
+  content: "\F633";
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+}
+
+.class-unit-list li.start a .imgBox .icon::after {
+  content: "\F4F4";
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+}
+
+.class-unit-list li.lock a .imgBox .icon::after {
+  content: "\F47A";
+  display: inline-block;
+  color: #616161;
+  font-family: bootstrap-icons !important;
+}
+
+.class-unit-list li.lock a .imgBox .progress-bar {
+  background: none;
+}
+
+.class-unit-list li a .unit-info {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 14px;
+}
+
+.class-progress {
+  padding: 30px;
+}
+
+.class-progress p {
+  color: #90949d;
+}
 
 @media(min-width:1024px) {
   .navbar-toggler {
