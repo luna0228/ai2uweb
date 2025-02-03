@@ -672,25 +672,68 @@ form .input-box {
   width: 140px;
 }
 
-.col-md-9 .class-list li .imgBox {
+.main-content {
+  width: 75%;
+  transition: all ease-in-out .3s;
+  margin: 0 auto;
+}
+
+.main-content.full {
+  width: 100%;
+  max-width: 996px;
+
+}
+
+.sidebar-content {
+  width: 25%;
+  transition: all ease-in-out .3s;
+  position: relative;
+}
+
+.sidebar-content.close {
+  position: fixed;
+  left: 100%;
+
+}
+
+.sidebar-content .sidebar-open {
+  padding: 12px 16px;
+  position: absolute;
+  left: -52px;
+  top: 0;
+  opacity: 0;
+  z-index: -1;
+  transition: all ease-in-out .3s;
+}
+
+.sidebar-content.close .sidebar-open {
+  opacity: 1;
+  z-index: 1;
+}
+
+.sidebar-content .sidebar-open .icon {
+  font-size: 1.25rem;
+}
+
+.main-content .class-list li .imgBox {
   width: 37%;
 }
 
-.col-md-9 .class-list li .class-info {
+.main-content .class-list li .class-info {
   width: 46%;
   padding: 0 20px;
 }
 
-.col-md-9 .class-list li .class-act {
+.main-content .class-list li .class-act {
   width: 17%;
   justify-content: flex-end;
 }
 
-.col-md-9 .class-list li .class-act .btn-basic {
+.main-content .class-list li .class-act .btn-basic {
   width: 120px;
 }
 
-.col-md-9 .class-list li .class-info p {
+.main-content .class-list li .class-info p {
   -webkit-line-clamp: 4;
 }
 
@@ -698,7 +741,7 @@ form .input-box {
   overflow: hidden;
 }
 
-.class-unit-sidebar .collapse-head {
+.class-unit-sidebar .sidebar-head {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   padding: 12px 16px;
@@ -707,13 +750,8 @@ form .input-box {
   align-items: center;
 }
 
-.class-unit-sidebar .collapse-head .icon {
-  transition: all ease-in-out .3s;
+.class-unit-sidebar .sidebar-head .icon {
   font-size: 1.25rem;
-}
-
-.class-unit-sidebar .collapse-head[aria-expanded="true"] .icon {
-  transform: rotate(-90deg);
 }
 
 .class-unit-sidebar .card-body {

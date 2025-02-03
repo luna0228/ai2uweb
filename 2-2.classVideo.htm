@@ -62,7 +62,7 @@
       <section class="page-content padding-style">
         <div class="container">
           <div class="row">
-            <div class="col-md-9 main-content">
+            <div class="main-content" id="main-content">
               <div class="class-video-box">
                 <div class="class-video mb-4">
                   <img src="assets/img/class-video.png" class="img-fluid " alt="課程影片-原生控制器">
@@ -80,17 +80,19 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="sidebar-content" id="sidebar-content">
+              <button type="button" class="btn btn-blue sidebar-open" id="sidebar-open">
+                <span class="icon text-white"><i class="bi bi-chevron-double-left"></i></span>
+              </button>
               <aside class="class-unit-sidebar box-shadow border-radius">
-
-                <button class="btn btn-blue w-100 collapse-head" type="button" data-bs-toggle="collapse"
-                  data-bs-target="#sidebar-lv1" aria-expanded="false" aria-controls="sidebar-lv1">
+                <button type="button" class="btn btn-blue w-100 sidebar-head" id="sidebar-hide">
                   <div class="text-sm text-white text-medium">
                     已完成 <span class="completed">2</span>/<span class="total">70</span>
                   </div>
                   <span class="icon text-white"><i class="bi bi-chevron-double-right"></i></span>
                 </button>
-                <div class="collapse" id="sidebar-lv1">
+
+                <div class="sidebar-lv1" id="sidebar-lv1">
                   <div class="card card-body">
 
                     <div class="accordion" id="sidebar-lv2">
