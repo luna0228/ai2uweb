@@ -29,17 +29,23 @@
           </button>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-mb"
             aria-controls="header-mb" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+            </svg>
           </button>
           <div class="collapse navbar-collapse" id="header-mb">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown_classes" role="button"
+                <a class="nav-link dropdown-toggle hide-mb" href="#" id="dropdown_class" role="button"
                   data-bs-toggle="dropdown" aria-expanded="false">
                   課程
                   <i class="bi bi-chevron-down ms-1"></i>
                 </a>
-                <ul class="dropdown-menu box-shadow" aria-labelledby="dropdown_classes">
+                <ul class="dropdown-menu box-shadow show-mb" aria-labelledby="dropdown_class">
+                  <li>
+                    <h5 class="text-medium show-mb mb-0">課程</h5>
+                  </li>
                   <li><a class="dropdown-item" href="#">所有分類</a></li>
                   <li><a class="dropdown-item" href="#">E象限-僱員 <i class="bi bi-chevron-right"></i></a></li>
                   <li><a class="dropdown-item" href="#">S象限-自營者 <i class="bi bi-chevron-right"></i></a></li>
@@ -59,35 +65,40 @@
       </nav>
     </header>
     <main>
-      <section class="page-content padding-style">
+      <section class="page-content padding-style relative video-md-top">
+        <button type="button" class="btn btn-blue sidebar-open" id="sidebar-open">
+          <span class="icon text-white"><i class="bi bi-chevron-double-left"></i></span>
+        </button>
         <div class="container">
-          <div class="row">
+          <div class="row relative">
             <div class="main-content" id="main-content">
-              <div class="class-video-box">
-                <div class="class-video mb-4">
-                  <img src="assets/img/class-video.png" class="img-fluid " alt="課程影片-原生控制器">
-                  <!-- <video></video> -->
+              <div class="class-content">
+                <div class="class-video-box">
+                  <div class="class-video mb-4">
+                    <img src="assets/img/class-video.png" class="img-fluid " alt="課程影片-原生控制器">
+                    <!-- <video></video> -->
+                  </div>
+                  <h3 class="class-name text-medium mb-0">1-1 我的廣告有效嗎｜三大報告協助你釐清與優化</h3>
                 </div>
-                <h3 class="class-name text-medium mb-0">1-1 我的廣告有效嗎｜三大報告協助你釐清與優化</h3>
+                <ul class="class-list">
+                  <li class="bg-white box-shadow border-radius d-flex mb-20">
+                    <div class="imgBox">
+                      <img src="assets/img/class.png" alt="課程名稱">
+                    </div>
+                    <div class="class-info">
+                      <!-- <span class="text-sm text-blue class-tag">S象限-自營者</span> -->
+                      <h5 class="class-name text-medium mb-3">GA4 新手完全攻略！用數據分析下商業決策｜2024 全面升級版</h5>
+                      <p class="text-sm text-gray">2021 年由 Hahow 與新商業學校合作的熱門 GA4 課程，三年後內容再升級啦！ 2024
+                        全面升級版，內容更新厚度再升級!...入門到進階，最貼近時下的 GA4 教學指南 三大教學亮點，突破你的學習卡點！白話解析 Ｘ 情境案例 ... 上機操作，掌握完整 GA4
+                        基礎操作，讓你行銷決策不再...直覺！</p>
+                    </div>
+                    <div class="class-act text-end pb-3 pe-2">
+                      <h5 class="class-price text-bold mb-20">NT$<span>2,800</span></h5>
+                      <a class="btn btn-basic btn-blue">購買</a>
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <ul class="class-list padding-style">
-                <li class="bg-white box-shadow border-radius d-flex mb-20">
-                  <div class="imgBox">
-                    <img src="assets/img/class.png" alt="課程名稱">
-                  </div>
-                  <div class="class-info">
-                    <!-- <span class="text-sm text-blue class-tag">S象限-自營者</span> -->
-                    <h5 class="class-name text-medium mb-3">GA4 新手完全攻略！用數據分析下商業決策｜2024 全面升級版</h5>
-                    <p class="text-sm text-gray">2021 年由 Hahow 與新商業學校合作的熱門 GA4 課程，三年後內容再升級啦！ 2024
-                      全面升級版，內容更新厚度再升級!...入門到進階，最貼近時下的 GA4 教學指南 三大教學亮點，突破你的學習卡點！白話解析 Ｘ 情境案例 ... 上機操作，掌握完整 GA4
-                      基礎操作，讓你行銷決策不再...直覺！</p>
-                  </div>
-                  <div class="class-act text-end pb-3 pe-2">
-                    <h5 class="class-price text-bold mb-20">NT$<span>2,800</span></h5>
-                    <a class="btn btn-basic btn-blue">購買</a>
-                  </div>
-                </li>
-              </ul>
             </div>
             <div class="sidebar-content" id="sidebar-content">
               <button type="button" class="btn btn-blue sidebar-open" id="sidebar-open">
