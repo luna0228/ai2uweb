@@ -19,6 +19,38 @@
             }, false)
         })
 
+
+
+    //錨點 平滑
+    // Define selector for selecting
+    // anchor links with the hash
+    let anchorSelector = 'a[href^="#"]';
+
+    // Collect all such anchor links
+    let anchorList =
+        document.querySelectorAll(anchorSelector);
+    // Iterate through each of the links
+    anchorList.forEach(link => {
+        link.onclick = function (e) {
+            console.log(link)
+            // Prevent scrolling if the
+            // hash value is blank
+            e.preventDefault();
+
+            // Get the destination to scroll to
+            // using the hash property
+            let destination =
+                document.querySelector(this.hash);
+            if (destination) {
+                // Scroll to the destination using
+                // scrollIntoView method
+                destination.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+
+        }
+    });
 })()
 
 //mobile
@@ -38,47 +70,48 @@ window.onload = function () {
     window.addEventListener('resize', resize, false)	// 偵聽事件 resize
 }
 
-//open\close sidebar
+//classvideo open\close sidebar
 
 var sidebarSwitchHide = document.getElementById('sidebar-hide')
 var sidebarSwitchOpen = document.getElementById('sidebar-open')
 var sidebarContent = document.getElementById('sidebar-content')
 var mainContent = document.getElementById('main-content')
-// console.log(sidebarSwitch)
-// var bsButton = new bootstrap.Button(sidebarSwitchHide)
-// var bsButton = new bootstrap.Button(sidebarSwitchOpen)
+
 if (sidebarSwitchHide) {
     sidebarSwitchHide.onclick = function () {
-        if (!sidebarContent.classList.contains("close") && !mainContent.classList.contains("full")) {
-            sidebarContent.classList.add("close");
-            mainContent.classList.add("full");
-            sidebarSwitchOpen.classList.add("show");
+        if (!sidebarContent.classList.contains('close') && !mainContent.classList.contains('full')) {
+            sidebarContent.classList.add('close');
+            mainContent.classList.add('full');
+            sidebarSwitchOpen.classList.add('show');
             console.log('1')
         }
         else {
-            sidebarContent.classList.remove("close");
-            mainContent.classList.remove("full");
-            sidebarSwitchOpen.classList.remove("show");
+            sidebarContent.classList.remove('close');
+            mainContent.classList.remove('full');
+            sidebarSwitchOpen.classList.remove('show');
             console.log('2')
         }
     };
 }
 if (sidebarSwitchOpen) {
     sidebarSwitchOpen.onclick = function () {
-        if (!sidebarContent.classList.contains("close") && !mainContent.classList.contains("full")) {
-            sidebarContent.classList.add("close");
-            mainContent.classList.add("full");
-            sidebarSwitchOpen.classList.add("show");
+        if (!sidebarContent.classList.contains('close') && !mainContent.classList.contains('full')) {
+            sidebarContent.classList.add('close');
+            mainContent.classList.add('full');
+            sidebarSwitchOpen.classList.add('show');
             console.log('1')
         }
         else {
-            sidebarContent.classList.remove("close");
-            mainContent.classList.remove("full");
-            sidebarSwitchOpen.classList.remove("show");
+            sidebarContent.classList.remove('close');
+            mainContent.classList.remove('full');
+            sidebarSwitchOpen.classList.remove('show');
             console.log('2')
         }
     };
 }
+
+
+
 
 
 
