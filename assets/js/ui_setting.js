@@ -24,7 +24,7 @@
     //錨點 平滑
     // Define selector for selecting
     // anchor links with the hash
-    let anchorSelector = 'a[href^="#"]';
+    let anchorSelector = '.class-nav a[href^="#"]';
 
     // Collect all such anchor links
     let anchorList =
@@ -51,6 +51,28 @@
 
         }
     });
+
+
+    //class info cover open/close
+    let swithBtnList = document.querySelectorAll('main .btn-line-more');
+
+    swithBtnList.forEach(swicth => {
+        swicth.onclick = function (e) {
+
+            let coverPlace = document.querySelector(this.hash);
+            console.log(coverPlace)
+            if (!coverPlace.classList.contains('show')) {
+                coverPlace.classList.add('show')
+                this.classList.add('hide')
+            }
+            else {
+                coverPlace.classList.remove('show')
+
+            }
+        }
+    })
+
+
 })()
 
 //mobile
@@ -70,8 +92,9 @@ window.onload = function () {
     window.addEventListener('resize', resize, false)	// 偵聽事件 resize
 }
 
-//classvideo open\close sidebar
 
+
+//classvideo open\close sidebar
 var sidebarSwitchHide = document.getElementById('sidebar-hide')
 var sidebarSwitchOpen = document.getElementById('sidebar-open')
 var sidebarContent = document.getElementById('sidebar-content')
