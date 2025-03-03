@@ -206,15 +206,30 @@ button:focus,
   opacity: 1;
 }
 
-.btn-line-more {
-  border: 1px solid #4681f0;
+.btn-line {
+  border: 1px solid #dadde8;
   border-radius: 4px;
-  max-width: 320px;
   width: 100%;
-  color: #4681f0;
-  padding: 10px 40px;
+  color: #616161;
   display: inline-block;
+  padding: 10px 12px;
 }
+
+.btn-line-more {
+  border-color: #4681f0;
+  color: #4681f0;
+  max-width: 320px;
+  padding: 10px 40px;
+}
+
+.btn-check:checked+.btn-line,
+.btn-check+.btn-line:hover {
+  border-color: #4681f0;
+  color: #4681f0;
+}
+
+
+
 
 .box-shadow {
   box-shadow: 0 4px 8px 0 rgba(19, 1, 1, 0.1);
@@ -515,8 +530,37 @@ hr {
   background: #f1f6fd;
 }
 
+/*footer*/
+footer {
+  background: #4681f0;
+  padding: 30px 0;
+}
 
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+}
 
+.footer-left {
+  width: 250px;
+}
+
+.footer-left img {
+  width: 90px;
+}
+
+.footer-right {
+  width: calc(100% - 250px);
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 -12px;
+  padding-top: 30px;
+}
+
+.footer-col {
+  width: 280px;
+  padding: 0 12px;
+}
 
 /*from*/
 input[type='password'] {
@@ -1177,6 +1221,10 @@ form .input-box {
   display: none;
 }
 
+.time-card {
+  padding: 30px 15px;
+  border: 1px solid #edeff4;
+}
 
 
 

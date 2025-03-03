@@ -141,7 +141,7 @@
       </section>
       <section class="page-content bg-white">
         <div class="container">
-          <div class="row">
+          <div class="row relative">
             <div class="main-content" id="main-content">
               <div class="class-nav-panel about-class" id="aboutClass">
                 <h4 class="text-bold pb-20 mb-10">關於課程</h4>
@@ -202,7 +202,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <a href="#classDetail-content" title="展開全部" class="btn-line-more">展開全部</a>
+                  <a href="#classDetail-content" title="展開全部" class="btn-line btn-line-more">展開全部</a>
                 </div>
               </div>
               <hr>
@@ -225,13 +225,13 @@
               </div>
               <div class="class-nav-panel" id="QA">
                 <h4 class="text-bold pb-20 mb-10">常見問題</h4>
-                <div class="accordion accordion-style01 border-radius" id="accordionExample">
+                <div class="accordion accordion-style01 border-radius" id="accordion01">
                   <div class="accordion-item">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      data-bs-target="#collapse01" aria-expanded="true" aria-controls="collapse01">
                       哪些人適合這堂課？
                     </button>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div id="collapse01" class="accordion-collapse collapse show" data-bs-parent="#accordion01">
                       <div class="accordion-body">
                         <p class="text-gray mb-0">
                           #1 產業新鮮人：初次接觸數據分析，完全沒有經驗的數據小白或產業新鮮人<br>
@@ -243,10 +243,10 @@
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      data-bs-target="#collapse02" aria-expanded="false" aria-controls="collapse02">
                       你可以學到
                     </button>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div id="collapse02" class="accordion-collapse collapse" data-bs-parent="#accordion01">
                       <div class="accordion-body">
                         <p class="text-gray mb-0">
                           #1 產業新鮮人：初次接觸數據分析，完全沒有經驗的數據小白或產業新鮮人<br>
@@ -258,10 +258,10 @@
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      data-bs-target="#collapse03" aria-expanded="false" aria-controls="collapse03">
                       上課前的準備
                     </button>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div id="collapse03" class="accordion-collapse collapse" data-bs-parent="#accordion01">
                       <div class="accordion-body">
                         <p class="text-gray mb-0">
                           #1 產業新鮮人：初次接觸數據分析，完全沒有經驗的數據小白或產業新鮮人<br>
@@ -285,10 +285,10 @@
                 <div class="accordion accordion-style02 border-radius" id="accordion02">
                   <div class="accordion-item">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      data-bs-target="#collapse04" aria-expanded="true" aria-controls="collapse04">
                       免費試看 (2)
                     </button>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordion02">
+                    <div id="collapse04" class="accordion-collapse collapse show" data-bs-parent="#accordion02">
                       <div class="accordion-body">
                         <ul class="chapter-list">
                           <li class="d-flex justify-content-between">
@@ -322,10 +322,10 @@
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      data-bs-target="#collapse05" aria-expanded="false" aria-controls="collapse05">
                       ch1. 建立你的正確觀念：新舊版GA入門指南
                     </button>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordion02">
+                    <div id="collapse05" class="accordion-collapse collapse" data-bs-parent="#accordion02">
                       <div class="accordion-body">
                         <ul class="chapter-list">
                           <li class="d-flex justify-content-between">
@@ -359,10 +359,10 @@
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      data-bs-target="#collapse06" aria-expanded="false" aria-controls="collapse06">
                       ch2. 了解你的用戶輪廓：使用者的站內行為剖析
                     </button>
-                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordion02">
+                    <div id="collapse06" class="accordion-collapse collapse" data-bs-parent="#accordion02">
                       <div class="accordion-body">
                         <ul class="chapter-list">
                           <li class="d-flex justify-content-between">
@@ -396,10 +396,10 @@
                   </div>
                   <div class="accordion-item">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                      data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      data-bs-target="#collapse07" aria-expanded="false" aria-controls="collapse07">
                       ch3. 擬定你的追蹤目標：建立事件追蹤與轉換
                     </button>
-                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordion02">
+                    <div id="collapse07" class="accordion-collapse collapse" data-bs-parent="#accordion02">
                       <div class="accordion-body">
                         <ul class="chapter-list">
                           <li class="d-flex justify-content-between">
@@ -435,7 +435,26 @@
               </div>
             </div>
             <div class="sidebar-content" id="sidebar-content">
+              <div class="time-card border-radius  box-shadow class-nav-panel">
+                <h3 class="mb-20 text-bold">NT$2,800</h3>
+                <p>選擇時段:</p>
+                <div class="input-radioBox mb-10">
+                  <input type="radio" class="btn-check" id="time01" name="radioBox" checked>
+                  <label class="btn btn-basic btn-line text-sm" for="time01">2025/01/18 9:00 ~2025/01/20 5:00</label>
 
+                </div>
+                <div class="input-radioBox mb-10">
+                  <input type="radio" class="btn-check" id="time02" name="radioBox">
+                  <label class="btn btn-basic btn-line text-sm" for="time02">2025/01/18 9:00 ~2025/01/20 5:00</label>
+
+                </div>
+                <div class="input-radioBox mb-10">
+                  <input type="radio" class="btn-check" id="time03" name="radioBox">
+                  <label class="btn btn-basic btn-line text-sm" for="time03">2025/01/18 9:00 ~2025/01/20 5:00</label>
+
+                </div>
+                <a class="btn btn-basic btn-blue w-100" type="button">立即購買</a>
+              </div>
             </div>
           </div>
 
@@ -444,9 +463,43 @@
         </div>
 
       </section>
+      <section class="recommend">
+        <div class="container">
+          <div class="class-nav-panel ">
+            <h4 class="text-bold pb-20">為您推薦</h4>
+            <div>
+              <!-- 輪播 -->
+            </div>
+          </div>
+        </div>
+
+      </section>
     </main>
     <footer>
+      <div class="container">
+        <div class="footer-box">
+          <div class="footer-left ">
+            <img src="/assets/img/logo/logo_footer.png" alt="logo_footer">
+            <div class="mt-30 text-sm text-white hide-mb">
+              <p>Copyright © heartynch Website 2024</p>
+            </div>
+          </div>
+          <div class="footer-right text-sm text-white">
+            <div class="footer-col">
+              <p>瑞麒整合規劃有限公司</p>
+              <p>地址：台北市士林區文林路338號3樓之1</p>
+            </div>
+            <div class="footer-col">
+              <p>電話：02-2883-87723</p>
+              <p>信箱：rich.chen0303@gmail.com</p>
+            </div>
+          </div>
+        </div>
 
+        <div class="footer-copyright text-sm text-white show-mb">
+          <p>Copyright © heartynch Website 2024</p>
+        </div>
+      </div>
     </footer>
   </div>
   <!-- JS -->
