@@ -286,6 +286,7 @@ header {
   z-index: 500;
 }
 
+
 .navbar-toggler {
   border: none;
   padding: 6px 4px;
@@ -293,10 +294,16 @@ header {
   box-shadow: none !important;
 }
 
-.navbar-toggler>svg {
-  width: 24px;
-  height: 24px;
-  fill: #121212;
+.navbar-toggler>i {
+  font-size: 1.5rem;
+  color: #121212;
+}
+
+
+.navbar-toggler[aria-expanded="true"]>i::before {
+  content: "\F659";
+  display: inline-block;
+  font-family: bootstrap-icons !important;
 }
 
 .navbar-toggler.collapsed .open-menu {
@@ -1303,9 +1310,14 @@ form .input-box {
   }
 
   .navbar-collapse {
-    display: flex !important;
+    display: block !important;
+  }
+
+  .navbar-collapse .d-flex {
+    display: flex;
     flex-basis: auto;
     justify-content: space-between;
+    align-items: center;
   }
 
   .float-md-right {
@@ -1327,15 +1339,34 @@ form .input-box {
     box-shadow: 0 4px 8px 0 rgba(19, 1, 1, 0.1);
   }
 
+  header::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #e9ecef;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1;
+  }
+
   .navbar {
-    padding: 10px 0;
     flex-wrap: wrap;
   }
 
+  .navbar-collapse .d-flex {
+    flex-direction: column-reverse;
+  }
 
   .navbar-nav {
     display: block;
     height: auto;
+    width: 100%;
+  }
+
+  .navbar .navbar-brand {
+    padding: 10px 0;
+    height: 60px;
   }
 
   .navbar-nav .nav-item {
@@ -1348,13 +1379,18 @@ form .input-box {
     border: none;
     box-shadow: none;
     width: 100%;
-    margin-top: 20px;
+    padding: 0 4px;
   }
 
   .navbar-nav .dropdown-menu .dropdown-item {
-    padding: 12px 0;
-    border-bottom: 1px solid #e9ecef;
+    padding: 16px 0;
+    border-bottom: none;
     background-color: #fff !important;
+    color: #121212;
+  }
+
+  .navbar-nav .dropdown-menu .dropdown-item i {
+    display: none;
   }
 
   .navbar-nav .dropdown-menu li:last-child .dropdown-item:last-child {
@@ -1363,12 +1399,27 @@ form .input-box {
 
   .navbar .navbar-end {
     justify-content: center;
-    padding-bottom: 10px;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+  }
+
+  .navbar .navbar-end::before {
+    content: "";
+    width: calc(100% + 40px);
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: -20px;
+    background-color: #edeff4;
   }
 
   .navbar .navbar-end button {
-    width: 50%;
+    border-radius: 6px;
+    text-align: center;
+    padding: 10px 15px;
   }
+
 
   .navbar .navbar-end .btn-text {
     background: #f8f9fb;
