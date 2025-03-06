@@ -14,8 +14,11 @@
   <!-- Plugins CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Link Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
   <link rel="stylesheet" type="text/css" href="assets/css/plugins.css">
-  <!-- KYART CSS-->
+  <!--  CSS-->
   <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
@@ -67,7 +70,7 @@
       </nav>
     </header>
     <main>
-      <section class="page-header pt-20 pb-20">
+      <section class="page-header class-page pt-20 pb-20">
         <div class="container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-20">
@@ -84,7 +87,7 @@
                 </div>
               </div>
               <div class="col-md-5 col-12">
-                <div class="collapse show" id="classInfo">
+                <div class="more-info-box" id="classInfo">
                   <div class="class-info ">
                     <div class="class-teacher d-flex my-3">
                       <div class="imgBox me-2">
@@ -111,12 +114,9 @@
                     </div>
                   </div>
                 </div>
+                <a href="#classInfo" title="查看更多" class="btn-more text-sm text-medium show-mb"
+                  aria-expanded="false">查看更多</a>
               </div>
-              <div class="col-12">
-                <a href="#classInfo" title="查看更多" class="btn-more show-mb" data-bs-toggle="collapse"
-                  aria-expanded="true">查看更多</a>
-              </div>
-
             </div>
           </div>
       </section>
@@ -124,16 +124,16 @@
         <div class="container">
           <ul class="class-nav">
             <li class="nav-item">
-              <a class="text-gray active" href="#aboutClass" onclick="scrollToAnchor(id)">關於課程</a>
+              <a class="text-gray active" href="#aboutClass""><span class=" hide-mb">關於</span>課程</a>
+            </li>
+            <li class=" nav-item">
+              <a class="text-gray" href="#aboutTeacher"><span class="hide-mb">關於</span>講師</a>
             </li>
             <li class="nav-item">
-              <a class="text-gray" href="#aboutTeacher">關於講師</a>
+              <a class="text-gray" href="#QA"><span class="hide-mb">常見</span>問題</a>
             </li>
             <li class="nav-item">
-              <a class="text-gray" href="#QA">常見問題</a>
-            </li>
-            <li class="nav-item">
-              <a class="text-gray" href="#chapter">單元一覽</a>
+              <a class="text-gray" href="#chapter">單元<span class="hide-mb">一覽</span></a>
             </li>
           </ul>
         </div>
@@ -141,17 +141,18 @@
       </section>
       <section class="page-content bg-white">
         <div class="container">
+
           <div class="row relative">
             <div class="main-content" id="main-content">
               <div class="class-nav-panel about-class" id="aboutClass">
-                <h4 class="text-bold pb-20 mb-10">關於課程</h4>
+                <h4 class="text-bold pb-20 mb-10 title">關於課程</h4>
                 <div class="row">
                   <div class="cir-text col-md-6">
                     <div class="cir">
                     </div>
                     <div class="text">
                       <span class="text-sm text-gray">課程時長</span>
-                      <p class="mb-0">
+                      <p class="mb-0 text-medium">
                         8 時 39 分鐘
                       </p>
                     </div>
@@ -161,7 +162,7 @@
                     </div>
                     <div class="text">
                       <span class="text-sm text-gray">觀看限制</span>
-                      <p class="mb-0">
+                      <p class="mb-0 text-medium">
                         不限時間、次數
                       </p>
                     </div>
@@ -173,7 +174,7 @@
                     </div>
                     <div class="text">
                       <span class="text-sm text-gray">可用裝置</span>
-                      <p class="mb-0">
+                      <p class="mb-0 text-medium">
                         電腦、手機（網頁、APP）
                       </p>
                     </div>
@@ -184,7 +185,7 @@
                     </div>
                     <div class="text">
                       <span class="text-sm text-gray">可用裝置</span>
-                      <p class="mb-0">
+                      <p class="mb-0 text-medium">
                         電腦、手機（網頁、APP）
                       </p>
                     </div>
@@ -200,6 +201,9 @@
                   <div class="imgBox">
                     <img src="assets/img/class-info2.png" alt="">
                   </div>
+                  <div class="imgBox">
+                    <img src="assets/img/class-info3.png" alt="">
+                  </div>
                 </div>
                 <div class="text-center">
                   <a href="#classDetail-content" title="展開全部" class="btn-line btn-line-more">展開全部</a>
@@ -207,7 +211,7 @@
               </div>
               <hr>
               <div class="class-nav-panel about-teacher" id="aboutTeacher">
-                <h4 class="text-bold pb-20 mb-10">關於講師</h4>
+                <h4 class="text-bold pb-20 mb-10 title">關於講師</h4>
                 <div class="line-card border-radius">
                   <div class="cir-text">
                     <div class="cir imgBox">
@@ -224,7 +228,7 @@
                 </div>
               </div>
               <div class="class-nav-panel" id="QA">
-                <h4 class="text-bold pb-20 mb-10">常見問題</h4>
+                <h4 class="text-bold pb-20 mb-10 title">常見問題</h4>
                 <div class="accordion accordion-style01 border-radius" id="accordion01">
                   <div class="accordion-item">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -275,7 +279,7 @@
               </div>
               <div class="class-nav-panel chapter-content" id="chapter">
 
-                <h4 class="text-bold pb-20 mb-10">單元一覽
+                <h4 class="text-bold pb-20 mb-10 title">單元一覽
 
                   <div class="float-md-right d-flex text-sm text-gray text-regular"><span>6 章節 19 單元</span><span>總時長 279
                       分鐘</span>
@@ -292,26 +296,32 @@
                       <div class="accordion-body">
                         <ul class="chapter-list">
                           <li class="d-flex justify-content-between">
-                            <a href="#" class="title" title="">
-                              1-1 我的廣告有效嗎｜三大報告協助你釐清與優化
-                            </a>
-                            <div class="chapter-left">
+                            <div class="chapter-right">
+                              <a href="#" class="title" title="">
+                                1-1 我的廣告有效嗎｜三大報告協助你釐清與優化
+                              </a>
                               <span class="tag text-mini text-blue ">試看</span>
+                            </div>
+                            <div class="chapter-left">
                               <span class="time text-sm text-gray">15:42</span>
                             </div>
                           </li>
                           <li class="d-flex justify-content-between">
-                            <a href="#" class="title" title="">
-                              1-2 可以只看我需要的報告嗎｜自訂報表省去你每次重新整理數據的時間
-                            </a>
+                            <div class="chapter-right">
+                              <a href="#" class="title" title="">
+                                1-2 可以只看我需要的報告嗎｜自訂報表省去你每次重新整理數據的時間
+                              </a>
+                            </div>
                             <div class="chapter-left">
                               <span class="time text-sm text-gray">19:25</span>
                             </div>
                           </li>
                           <li class="d-flex justify-content-between">
-                            <a href="#" class="title" title="">
-                              1-3 免費檢測工具
-                            </a>
+                            <div class="chapter-right">
+                              <a href="#" class="title" title="">
+                                1-3 免費檢測工具
+                              </a>
+                            </div>
                             <div class="chapter-left">
                               <span class="time text-sm text-gray">02:46</span>
                             </div>
@@ -434,32 +444,41 @@
                 </div>
               </div>
             </div>
-            <div class="sidebar-content" id="sidebar-content">
-              <div class="time-card border-radius  box-shadow class-nav-panel">
+            <div class="sidebar-content sticky" id="sidebar-content">
+              <div class="time-picker-card border-radius  box-shadow class-nav-panel">
                 <h3 class="mb-20 text-bold">NT$2,800</h3>
-                <p>選擇時段:</p>
-                <div class="input-radioBox mb-10">
-                  <input type="radio" class="btn-check" id="time01" name="radioBox" checked>
-                  <label class="btn btn-basic btn-line text-sm" for="time01">2025/01/18 9:00 ~2025/01/20 5:00</label>
+                <div class="time-picker-box">
+                  <div class="top">
+                    <p class="text-medium">選擇時段:</p>
+                    <button class="close btn text-gray" type="button"><i class="bi bi-x-lg"></i></button>
+                  </div>
+                  <div class="bottom">
+                    <div class="input-radioBox mb-10">
+                      <input type="radio" class="btn-check" id="time01" name="radioBox" checked>
+                      <label class="btn btn-basic btn-line text-sm" for="time01">2025/01/18 9:00 ~2025/01/20
+                        5:00</label>
+
+                    </div>
+                    <div class="input-radioBox mb-10">
+                      <input type="radio" class="btn-check" id="time02" name="radioBox">
+                      <label class="btn btn-basic btn-line text-sm" for="time02">2025/01/18 9:00 ~2025/01/20
+                        5:00</label>
+
+                    </div>
+                    <div class="input-radioBox mb-10">
+                      <input type="radio" class="btn-check" id="time03" name="radioBox" disabled>
+                      <label class="btn btn-basic btn-line text-sm" for="time03">2025/01/18 9:00 ~2025/01/20
+                        5:00</label>
+
+                    </div>
+                  </div>
 
                 </div>
-                <div class="input-radioBox mb-10">
-                  <input type="radio" class="btn-check" id="time02" name="radioBox">
-                  <label class="btn btn-basic btn-line text-sm" for="time02">2025/01/18 9:00 ~2025/01/20 5:00</label>
-
-                </div>
-                <div class="input-radioBox mb-10">
-                  <input type="radio" class="btn-check" id="time03" name="radioBox">
-                  <label class="btn btn-basic btn-line text-sm" for="time03">2025/01/18 9:00 ~2025/01/20 5:00</label>
-
-                </div>
-                <a class="btn btn-basic btn-blue w-100" type="button">立即購買</a>
+                <!-- 第一次判定是否有時段可選擇，並彈出時段窗  /  選擇時段後，第二次判斷是否有選擇時段並送出 -->
+                <button class="btn btn-basic btn-blue w-100 buyNowBtn" type="submit">立即購買</button>
               </div>
             </div>
           </div>
-
-
-
         </div>
 
       </section>
@@ -467,9 +486,51 @@
         <div class="container">
           <div class="class-nav-panel ">
             <h4 class="text-bold pb-20">為您推薦</h4>
-            <div>
-              <!-- 輪播 -->
+
+            <!-- Swiper -->
+            <div class="swiper recommend-slide">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="imgBox border-radius">
+                    <img src="assets/img/class.png" alt="課程名稱">
+                  </div>
+                  <div class="text py-3">
+                    <p class="text-medium mb-2">商戰：孫子兵法/商戰：孫子兵法/商戰：孫子兵法/商戰：孫子兵法</p>
+                    <span class="text-sm text-gray">Kenny 老師/Kenny 老師/Kenny 老師 </span>
+                  </div>
+
+                </div>
+                <div class="swiper-slide">
+                  <div class="imgBox border-radius">
+                    <img src="assets/img/class.png" alt="課程名稱">
+                  </div>
+                  <div class="text py-3">
+                    <p class="text-medium mb-2">商戰：孫子兵法</p>
+                    <span class="text-sm text-gray">Kenny 老師</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="imgBox border-radius">
+                    <img src="assets/img/class.png" alt="課程名稱">
+                  </div>
+                  <div class="text py-3">
+                    <p class="text-medium mb-2">DISC 組織影響力</p>
+                    <span class="text-sm text-gray">林璿霙 Web資深工程師</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="imgBox border-radius">
+                    <img src="assets/img/class.png" alt="課程名稱">
+                  </div>
+                  <div class="text py-3">
+                    <p class="text-medium mb-2">S象限 - 銷售循環業務力</p>
+                    <span class="text-sm text-gray">點點 命理師</span>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
+
           </div>
         </div>
 
@@ -480,8 +541,8 @@
         <div class="footer-box">
           <div class="footer-left ">
             <img src="/assets/img/logo/logo_footer.png" alt="logo_footer">
-            <div class="mt-30 text-sm text-white hide-mb">
-              <p>Copyright © heartynch Website 2024</p>
+            <div class="footer-copyright mt-30 text-sm text-white">
+              <p class="mb-0">Copyright © heartynch Website 2024</p>
             </div>
           </div>
           <div class="footer-right text-sm text-white">
@@ -495,10 +556,6 @@
             </div>
           </div>
         </div>
-
-        <div class="footer-copyright text-sm text-white show-mb">
-          <p>Copyright © heartynch Website 2024</p>
-        </div>
       </div>
     </footer>
   </div>
@@ -507,12 +564,30 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/ui_setting.js"></script>
   <!-- END JS -->
   <script>
 
-
+    var swiper = new Swiper(".recommend-slide", {
+      slidesPerView: 1.8,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      breakpoints: {
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 24,
+        },
+      }
+    });
 
   </script>
 </body>

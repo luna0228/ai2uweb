@@ -3,6 +3,7 @@
 (function () {
     'use strict'
 
+    //用於表單驗證
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
 
@@ -21,7 +22,7 @@
 
 
 
-    //錨點 平滑
+    //錨點 平滑滑動
     // Define selector for selecting
     // anchor links with the hash
     let anchorSelector = '.class-nav a[href^="#"]';
@@ -54,10 +55,28 @@
 
 
     //class info cover open/close
-    let swithBtnList = document.querySelectorAll('main .btn-line-more');
+    let switchBtnList = document.querySelectorAll('main .btn-line-more');
 
-    swithBtnList.forEach(swicth => {
-        swicth.onclick = function (e) {
+    switchBtnList.forEach(switchItem => {
+        switchItem.onclick = function (e) {
+
+            let coverPlace = document.querySelector(this.hash);
+            // console.log(coverPlace)
+            if (!coverPlace.classList.contains('show')) {
+                coverPlace.classList.add('show')
+                this.classList.add('hide')
+            }
+            else {
+                coverPlace.classList.remove('show')
+
+            }
+        }
+    })
+
+    let moreInfoList = document.querySelectorAll('main .btn-more');
+
+    moreInfoList.forEach(moreInfo => {
+        moreInfo.onclick = function (e) {
 
             let coverPlace = document.querySelector(this.hash);
             console.log(coverPlace)
@@ -80,8 +99,39 @@ window.onload = function () {
     function resize() {
         console.log('resize')
         let w_width = document.documentElement.clientWidth
-        if (w_width < 1024) {
-            console.log('<1024')
+
+        if (w_width <= 767) {
+            console.log('<=767')
+            //立即購買 開啟時段
+            //buy now open time picker box
+            let buyNowBtn = document.querySelector('button.buyNowBtn');
+            let timePickerBox = document.querySelector('.time-picker-box');
+            let thisBody = document.querySelector('body');
+            let closeTimePickerBox = document.querySelector('.time-picker-box button.close');
+
+            const ToggleTimePickerBox = () => {
+                console.log(timePickerBox)
+                if (!timePickerBox.classList.contains('show')) {
+                    timePickerBox.classList.add('show')
+                    thisBody.classList.add('cover')
+                }
+                else {
+                    timePickerBox.classList.remove('show')
+                    thisBody.classList.remove('cover')
+                }
+            }
+            buyNowBtn.onclick = function (e) {
+
+
+                ToggleTimePickerBox()
+            }
+            closeTimePickerBox.onclick = function (e) {
+
+                ToggleTimePickerBox()
+            }
+        }
+        if (w_width <= 1024) {
+            console.log('<=1024')
 
         }
         else {
@@ -100,36 +150,29 @@ var sidebarSwitchOpen = document.getElementById('sidebar-open')
 var sidebarContent = document.getElementById('sidebar-content')
 var mainContent = document.getElementById('main-content')
 
+const ToggleClassSidebar = () => {
+    if (!sidebarContent.classList.contains('close') && !mainContent.classList.contains('full')) {
+        sidebarContent.classList.add('close');
+        mainContent.classList.add('full');
+        sidebarSwitchOpen.classList.add('show');
+        console.log('1')
+    }
+    else {
+        sidebarContent.classList.remove('close');
+        mainContent.classList.remove('full');
+        sidebarSwitchOpen.classList.remove('show');
+        console.log('2')
+    }
+}
+
 if (sidebarSwitchHide) {
     sidebarSwitchHide.onclick = function () {
-        if (!sidebarContent.classList.contains('close') && !mainContent.classList.contains('full')) {
-            sidebarContent.classList.add('close');
-            mainContent.classList.add('full');
-            sidebarSwitchOpen.classList.add('show');
-            console.log('1')
-        }
-        else {
-            sidebarContent.classList.remove('close');
-            mainContent.classList.remove('full');
-            sidebarSwitchOpen.classList.remove('show');
-            console.log('2')
-        }
+        ToggleClassSidebar()
     };
 }
 if (sidebarSwitchOpen) {
     sidebarSwitchOpen.onclick = function () {
-        if (!sidebarContent.classList.contains('close') && !mainContent.classList.contains('full')) {
-            sidebarContent.classList.add('close');
-            mainContent.classList.add('full');
-            sidebarSwitchOpen.classList.add('show');
-            console.log('1')
-        }
-        else {
-            sidebarContent.classList.remove('close');
-            mainContent.classList.remove('full');
-            sidebarSwitchOpen.classList.remove('show');
-            console.log('2')
-        }
+        ToggleClassSidebar()
     };
 }
 
