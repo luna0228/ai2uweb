@@ -294,30 +294,22 @@ header {
   box-shadow: none !important;
 }
 
-.navbar-toggler>i {
-  font-size: 1.5rem;
-  color: #121212;
-}
 
 
-.navbar-toggler[aria-expanded="true"]>i::before {
-  content: "\F659";
-  display: inline-block;
-  font-family: bootstrap-icons !important;
-}
 
-.navbar-toggler.collapsed .open-menu {
+/* .navbar-toggler.collapsed .open-menu {
   display: block;
 }
 
 .navbar-toggler.collapsed .close-menu {
   display: none;
-}
+} */
 
 .navbar {
-  padding: 0;
+  padding: 10px 0;
   flex-wrap: nowrap;
   background: #fff;
+  height: 80px;
 }
 
 .navbar .navbar-brand {
@@ -332,17 +324,26 @@ header {
 }
 
 .navbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
+
+}
+
+/* .navbar-nav {
   height: 80px;
   display: flex;
   flex-direction: row;
   align-items: center;
-}
+} */
 
-.navbar-nav .nav-item {
+/* .navbar-nav .nav-item {
   padding: 15px 0;
-}
+} */
 
-.navbar-nav .nav-item .nav-link {
+.navbar-nav .nav-link {
   padding: 8px 25px;
   color: #121212;
   font-weight: 500;
@@ -353,19 +354,20 @@ header {
   border-radius: 20px;
 }
 
-.navbar-nav .nav-item .nav-link:hover,
-.navbar-nav .nav-item .nav-link:focus,
-.navbar-nav .nav-item .nav-link[aria-expanded="true"] {
-  background-color: #f8f9fb;
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link[aria-expanded="true"] {
+
+  background-color: rgba(70, 129, 240, 0.1);
   opacity: 1;
 }
 
-.navbar-nav .nav-item .nav-link i {
+.navbar-nav .nav-link i {
   transition: all ease-in-out 0.3s;
   display: inline-block;
 }
 
-.navbar-nav .nav-item .nav-link[aria-expanded="true"] i {
+.navbar-nav .nav-link[aria-expanded="true"] i {
   transform: rotate(-180deg);
 }
 
@@ -397,24 +399,27 @@ header {
 
 .navbar-nav .dropdown-menu .dropdown-item:hover,
 .navbar-nav .dropdown-menu .dropdown-item:focus {
-  background-color: #f8f9fb;
+  color: #4681f0;
+  background-color: #fff;
   opacity: 1;
 }
 
+/* 
 .navbar-nav .dropdown-menu .dropdown-item i {
   font-size: .85rem;
   color: #b9bdcb;
   font-weight: 700;
-}
+} */
 
-.navbar .navbar-end button {
+.navbar .navbar-end .btn {
   padding: 8px 25px;
   border-radius: 20px;
 }
 
 .navbar .navbar-end .btn-text:hover,
 .navbar .navbar-end .btn-text:focus {
-  background-color: #f8f9fb;
+
+  background-color: rgba(70, 129, 240, 0.1);
 }
 
 
@@ -1309,7 +1314,7 @@ form .input-box {
     display: none;
   }
 
-  .navbar-collapse {
+  /* .navbar-collapse {
     display: block !important;
   }
 
@@ -1318,7 +1323,7 @@ form .input-box {
     flex-basis: auto;
     justify-content: space-between;
     align-items: center;
-  }
+  } */
 
   .float-md-right {
     float: right;
@@ -1336,7 +1341,8 @@ form .input-box {
 
   header {
     min-height: 60px;
-    box-shadow: 0 4px 8px 0 rgba(19, 1, 1, 0.1);
+    box-shadow: none;
+    border-bottom: 1px solid #e9ecef;
   }
 
   header::before {
@@ -1352,26 +1358,54 @@ form .input-box {
 
   .navbar {
     flex-wrap: wrap;
+    height: 60px;
   }
 
-  .navbar-collapse .d-flex {
+  /* .navbar-collapse .d-flex {
     flex-direction: column-reverse;
+  } */
+
+  .navbar-toggler>i {
+    font-size: 1.5rem;
+    color: #121212;
+  }
+
+  .navbar.open .navbar-toggler>i::before {
+    content: "\F659";
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+  }
+
+  .navbar.open .navbar-nav {
+    left: 0;
+    opacity: 1;
   }
 
   .navbar-nav {
     display: block;
-    height: auto;
+    position: fixed;
     width: 100%;
+    height: 100%;
+    top: 60px;
+    background: #fff;
+    transition: all ease-out .5s;
+    left: 100%;
   }
 
-  .navbar .navbar-brand {
-    padding: 10px 0;
-    height: 60px;
+
+
+  .navbar-nav .navbar-btn {
+    padding: 20px;
+    border-bottom: 1px solid #e9ecef;
   }
 
   .navbar-nav .nav-item {
     width: 100%;
     padding: 10px 0;
+  }
+
+  .navbar-nav .dropdown {
+    padding: 10px 20px;
   }
 
   .navbar-nav .dropdown-menu {
@@ -1414,7 +1448,7 @@ form .input-box {
     background-color: #edeff4;
   }
 
-  .navbar .navbar-end button {
+  .navbar .navbar-end .btn {
     border-radius: 6px;
     text-align: center;
     padding: 10px 15px;

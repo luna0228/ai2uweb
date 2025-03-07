@@ -3,6 +3,27 @@
 (function () {
     'use strict'
 
+    //小版menu開關
+    //header mobile navbar open/close
+    let menuToggle = document.querySelector('header .navbar-toggler');
+
+
+    menuToggle.onclick = function (e) {
+
+        let mobileMenu = document.querySelector('header .navbar');
+        console.log(mobileMenu)
+        if (!mobileMenu.classList.contains('open')) {
+            mobileMenu.classList.add('open')
+        }
+        else {
+            mobileMenu.classList.remove('open')
+
+        }
+    }
+
+
+
+
     //用於表單驗證
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
     var forms = document.querySelectorAll('.needs-validation')
@@ -53,7 +74,7 @@
         }
     });
 
-
+    //課程介紹 展開更多
     //class info cover open/close
     let switchBtnList = document.querySelectorAll('main .btn-line-more');
 
@@ -72,7 +93,7 @@
             }
         }
     })
-
+    //課程介紹 查看更多
     let moreInfoList = document.querySelectorAll('main .btn-more');
 
     moreInfoList.forEach(moreInfo => {
@@ -143,7 +164,7 @@ window.onload = function () {
 }
 
 
-
+//課程影片 側欄收合
 //classvideo open\close sidebar
 var sidebarSwitchHide = document.getElementById('sidebar-hide')
 var sidebarSwitchOpen = document.getElementById('sidebar-open')
