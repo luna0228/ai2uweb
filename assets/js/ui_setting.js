@@ -46,7 +46,7 @@
     //錨點 平滑滑動
     // Define selector for selecting
     // anchor links with the hash
-    let anchorSelector = '.class-nav a[href^="#"]';
+    let anchorSelector = ".class-nav a[href^='#']";
 
     // Collect all such anchor links
     let anchorList =
@@ -113,10 +113,39 @@
     })
 
 
+    //會員中心 頁面切換
+    // member switch page 
+    let memberPanel = document.querySelectorAll('.member-page .main-card');//每個小區塊
+    let menuLinks = document.querySelectorAll('.member-menu-list a'); // 側邊選單
+
+    if (menuLinks) {
+        // 點擊選單 -> 進入內容區
+        menuLinks.forEach(link => {
+            link.onclick = function (e) {
+                e.preventDefault(); // 防止跳轉
+
+                let destination =
+                    document.querySelector(this.hash);
+                if (destination && memberPanel) {
+                    memberPanel.forEach(panel => {
+                        panel.classList.add('hide');
+                        destination.classList.remove('hide');
+                    })
+
+                }
+
+            }
+        });
+    }
+
+
 })()
+
 
 //mobile
 window.onload = function () {
+
+
     function resize() {
         console.log('resize')
         let w_width = document.documentElement.clientWidth
@@ -141,15 +170,58 @@ window.onload = function () {
                     thisBody.classList.remove('cover')
                 }
             }
-            buyNowBtn.onclick = function (e) {
+            if (buyNowBtn) {
+                buyNowBtn.onclick = function (e) {
 
-
-                ToggleTimePickerBox()
+                    ToggleTimePickerBox()
+                }
             }
-            closeTimePickerBox.onclick = function (e) {
+            if (closeTimePickerBox) {
+                closeTimePickerBox.onclick = function (e) {
 
-                ToggleTimePickerBox()
+                    ToggleTimePickerBox()
+                }
             }
+
+
+            //會員中心 小版 頁面切換
+            //mobile member switch page 
+
+            let menuLinks = document.querySelectorAll('.member-menu-list a'); // 側邊選單
+            let backButton = document.querySelector('.member-page .btn-back '); // 返回按鈕
+            let container = document.querySelector('.member-page .two-column-page'); // 整個區塊
+            let memberPanel = document.querySelectorAll('.member-page .main-card');//每個小區塊
+
+            if (menuLinks) {
+                // 點擊選單 -> 進入內容區
+                menuLinks.forEach(link => {
+                    link.onclick = function (e) {
+                        e.preventDefault(); // 防止跳轉
+
+                        let destination =
+                            document.querySelector(this.hash);
+                        if (destination && memberPanel) {
+                            memberPanel.forEach(panel => {
+                                panel.classList.add('hide');
+                                destination.classList.remove('hide');
+                            })
+
+                        }
+
+                        container.classList.add('panel-active');
+
+                    }
+                });
+            }
+
+            if (backButton) {
+                // 點擊返回 -> 回到選單
+                backButton.onclick = function (e) {
+                    container.classList.remove('panel-active');
+                }
+            }
+
+
         }
         if (w_width <= 1024) {
             console.log('<=1024')
@@ -162,6 +234,8 @@ window.onload = function () {
     resize()
     window.addEventListener('resize', resize, false)	// 偵聽事件 resize
 }
+
+
 
 
 //課程影片 側欄收合

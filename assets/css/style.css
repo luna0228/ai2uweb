@@ -1498,6 +1498,10 @@ tr {
   .float-md-right {
     float: right;
   }
+
+  .member-page .mobile-header {
+    display: none;
+  }
 }
 
 @media(max-width:1024px) {
@@ -1968,17 +1972,55 @@ tr {
     margin-right: 10px;
   }
 
-  .member-main {
-    flex-wrap: nowrap;
-    overflow: hidden;
-    position: relative;
+  .member-page .mobile-header {
+    display: block;
   }
 
-  .member-main.two-column-page aside,
-  .member-main.two-column-page .main-panel {
-    width: 100%;
-    flex: 0 0 100%;
+  .member-main.two-column-page {
+    position: relative;
+    /* overflow: hidden;
+    width: 100%; */
+    height: auto;
+    /* 確保填滿整個畫面 */
   }
+
+  .member-main.two-column-page aside {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .member-main.two-column-page .main-panel {
+    position: absolute;
+    width: 100%;
+    left: 100%;
+    /* 初始隱藏在畫面外 */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .two-column-page.panel-active aside {
+    transform: translateX(-100%);
+  }
+
+  .two-column-page.panel-active .main-panel {
+    transform: translateX(-100%);
+  }
+
+  /* 返回按鈕 */
+  .btn-back {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+
 }
 
 
